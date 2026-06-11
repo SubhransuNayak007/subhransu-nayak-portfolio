@@ -20,7 +20,9 @@ import {
   SiC,
   SiSharp,
   SiVercel,
-  SiGit
+  SiGit,
+  SiJavascript,
+  SiHtml5
 } from 'react-icons/si';
 import { Skill } from '../types';
 
@@ -44,7 +46,7 @@ const iconMap: { [key: string]: JSX.Element } = {
   SiRabbitmq: <SiRabbitmq />,
   SiImessage: <SiImessage />,
   
-  // Static data names
+  // Static data names / values
   "React": <FaReact />,
   "Node": <FaNodeJs />,
   "Python": <FaPython />,
@@ -53,7 +55,23 @@ const iconMap: { [key: string]: JSX.Element } = {
   "C": <SiC />,
   "C#": <SiSharp />,
   "Git": <SiGit />,
-  "Vercel": <SiVercel />
+  "Vercel": <SiVercel />,
+  "MySQL": <SiMysql />,
+  "PostgreSQL": <SiPostgresql />,
+  "HTML&CSS": <SiHtml5 />,
+  "JavaScript": <SiJavascript />,
+  "TypeScript": <SiTypescript />,
+  "Ruby on Rails": <SiRubyonrails />,
+  "PHP": <SiPhp />,
+  "SpringBoot": <SiSpringboot />,
+  "Node.js": <FaNodeJs />,
+  "CI/CD": <SiImessage />,
+  "Netlify": <SiNetlify />,
+  "Heroku": <SiHeroku />,
+  "Kubernetes": <SiKubernetes />,
+  "GCP": <SiGooglecloud />,
+  "AWS": <FaAws />,
+  "Docker": <FaDocker />
 };
 
 const Skills: React.FC = () => {

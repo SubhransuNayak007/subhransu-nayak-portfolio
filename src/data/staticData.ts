@@ -115,59 +115,134 @@ export const staticContactMe: ContactMe = {
 };
 
 export const staticSkills: Skill[] = [
+  // Backend Category
   {
-    name: "React Spellbook",
+    name: "Ruby on Rails",
+    category: "Backend",
+    description: "Backend Framework",
+    icon: "SiRubyonrails"
+  },
+  {
+    name: "PHP",
+    category: "Backend",
+    description: "Backend Language",
+    icon: "SiPhp"
+  },
+  {
+    name: "Java",
+    category: "Backend",
+    description: "Object-Oriented Programming Language",
+    icon: "FaJava"
+  },
+  {
+    name: "SpringBoot",
+    category: "Backend",
+    description: "Java Framework",
+    icon: "SiSpringboot"
+  },
+  {
+    name: "Node.js",
+    category: "Backend",
+    description: "Backend Runtime",
+    icon: "FaNodeJs"
+  },
+
+  // Databases Category
+  {
+    name: "MySQL",
+    category: "Databases",
+    description: "Relational Database",
+    icon: "SiMysql"
+  },
+  {
+    name: "PostgreSQL",
+    category: "Databases",
+    description: "Relational Database",
+    icon: "SiPostgresql"
+  },
+
+  // Frontend Category
+  {
+    name: "HTML&CSS",
     category: "Frontend",
-    description: "Component composition, state management, hooks, and single-page routing structures.",
-    icon: "React"
+    description: "Web Markup and Styling",
+    icon: "SiHtml5"
   },
   {
-    name: "Node.js Reactor Shield",
-    category: "Backend",
-    description: "Building scalable backend pipelines, REST API configurations, and task scheduling structures.",
-    icon: "Node"
+    name: "JavaScript",
+    category: "Frontend",
+    description: "Scripting Language",
+    icon: "SiJavascript"
   },
   {
-    name: "Python Serpent Blade",
-    category: "Scripting / Data Scraper",
-    description: "Creating custom downloaders, web scrapers, data pipelines, and automation scripts.",
-    icon: "Python"
+    name: "TypeScript",
+    category: "Frontend",
+    description: "Type-safe JavaScript",
+    icon: "SiTypescript"
   },
   {
-    name: "Java Warhammer",
-    category: "Backend",
-    description: "Object-oriented structures, enterprise logic implementation, and database integration.",
-    icon: "Java"
+    name: "React",
+    category: "Frontend",
+    description: "Frontend Framework",
+    icon: "FaReact"
+  },
+
+  // Cloud & DevOps Category
+  {
+    name: "CI/CD",
+    category: "Cloud & DevOps",
+    description: "Continuous Integration & Delivery",
+    icon: "SiImessage"
   },
   {
-    name: "Tailwind Aegis",
-    category: "Styling",
-    description: "Building layouts, styling utility classes, custom themes, and fully responsive designs.",
-    icon: "Tailwind"
+    name: "Netlify",
+    category: "Cloud & DevOps",
+    description: "Frontend Deployment Platform",
+    icon: "SiNetlify"
   },
   {
-    name: "C-Compiler Helmet",
-    category: "System / Basic Logic",
-    description: "Understanding low-level operations, compilation steps, arrays, pointers, and memory allocations.",
-    icon: "C"
+    name: "Heroku",
+    category: "Cloud & DevOps",
+    description: "Cloud Platform for Apps",
+    icon: "SiHeroku"
   },
   {
-    name: "C# Rune Stone",
-    category: "Logic / Application",
-    description: "Desktop tooling pipelines, backend pipelines, and component automation bindings.",
-    icon: "C#"
+    name: "Kubernetes",
+    category: "Cloud & DevOps",
+    description: "Container Orchestration",
+    icon: "SiKubernetes"
   },
   {
-    name: "Git Ring of Time Travel",
-    category: "Tools",
-    description: "Version control, branching, committing, merging, conflict resolution, and GitHub collaboration.",
-    icon: "Git"
+    name: "GCP",
+    category: "Cloud & DevOps",
+    description: "Google Cloud Platform",
+    icon: "SiGooglecloud"
   },
   {
-    name: "Vercel Amulet",
-    category: "Deployment",
-    description: "Continuous integration, hosting deployment, environment configurations, and static file serving.",
-    icon: "Vercel"
+    name: "AWS",
+    category: "Cloud & DevOps",
+    description: "Cloud Platform",
+    icon: "FaAws"
+  },
+
+  // Other Tools & Practices Category
+  {
+    name: "Docker",
+    category: "Other Tools & Practices",
+    description: "Containerization",
+    icon: "FaDocker"
+  },
+  {
+    name: "Git",
+    category: "Other Tools & Practices",
+    description: "Version Control",
+    icon: "SiGit"
+  },
+  {
+    name: "Vercel",
+    category: "Other Tools & Practices",
+    description: "Deployment Platform",
+    icon: "SiVercel"
   }
 ];
 

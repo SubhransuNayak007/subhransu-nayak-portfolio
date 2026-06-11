@@ -67,6 +67,26 @@ export const staticTimeline: TimelineItem[] = [
 
 export const staticProjects: Project[] = [
   {
+    title: "TubeFlow",
+    description: "An AI-powered SaaS that automates YouTube comment replies 24/7. Evaluates incoming queries using smart keyword rules and responds instantly to pricing, links, or coupon queries in the creator's voice.",
+    techUsed: "React, TypeScript, Tailwind CSS, Node.js",
+    image: { url: "/images/tubeflow.png" },
+    link: "https://tubeflow-weld.vercel.app/"
+  },
+  {
+    title: "TubeForge",
+    description: "A multimodal AI workspace that transforms YouTube videos into rich knowledge assets. Automatically generates study notes, interactive quizzes, and SEO-optimized blog posts directly from video content.",
+    techUsed: "React, TypeScript, Tailwind CSS, Python",
+    image: { url: "/images/tubeforge.png" }
+  },
+  {
+    title: "Bruhaspati AI",
+    description: "An elite AI tutoring platform for Indian competitive exams (CBSE, JEE, NEET, IAT). Provides structured answers complete with LaTeX math, diagrams, key board vocabulary, and exam history insights.",
+    techUsed: "React, TypeScript, CSS, Gemini API",
+    image: { url: "/images/bruhaspati.png" },
+    link: "https://bruhaspati-ai.vercel.app/"
+  },
+  {
     title: "Pitbull Market",
     description: "A real-time trading simulator website offering an immersive, simulated financial market experience. Players can execute mock trades and watch tickers update dynamically. 10,000+ mock trades processed in real-time.",
     techUsed: "React, CSS, HTML",
@@ -76,7 +96,8 @@ export const staticProjects: Project[] = [
     title: "StreamGrab",
     description: "A high-performance YouTube and Instagram 4K video downloader built with a modern and intuitive user interface using scrapers and custom pipelines. 4K downloads processed in under 12 seconds.",
     techUsed: "Python, C#, Node.js",
-    image: { url: "/images/streamgrab.png" }
+    image: { url: "/images/streamgrab.png" },
+    link: "https://github.com/SubhransuNayak007/StreamGrab"
   },
   {
     title: "Repairer (Beta)",

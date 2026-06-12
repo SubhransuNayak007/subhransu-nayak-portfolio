@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './ContinueWatching.css';
 import musicBanner from '../images/Hotelcalifornia.jpg';
 import readingBanner from '../images/atomic_habits.jpg';
+import moviesBanner from '../images/movies_banner.png';
 
 type ProfileType = 'recruiter' | 'developer' | 'stalker' | 'adventure';
 
@@ -13,18 +14,22 @@ interface ContinueWatchingProps {
 const continueWatchingConfig = {
   recruiter: [
     { title: "Music", imgSrc: musicBanner, link: "/music" },
-    { title: "Reading", imgSrc: readingBanner, link: "/reading" }
+    { title: "Reading", imgSrc: readingBanner, link: "/reading" },
+    { title: "Movies", imgSrc: moviesBanner, link: "/movies" }
   ],
   developer: [
     { title: "Music", imgSrc: musicBanner, link: "/music" },
-    { title: "Reading", imgSrc: readingBanner, link: "/reading" }
+    { title: "Reading", imgSrc: readingBanner, link: "/reading" },
+    { title: "Movies", imgSrc: moviesBanner, link: "/movies" }
   ],
   stalker: [
-    { title: "Reading", imgSrc: readingBanner, link: "/reading" }
+    { title: "Reading", imgSrc: readingBanner, link: "/reading" },
+    { title: "Movies", imgSrc: moviesBanner, link: "/movies" }
   ],
   adventure: [
     { title: "Music", imgSrc: musicBanner, link: "/music" },
-    { title: "Reading", imgSrc: readingBanner, link: "/reading" }
+    { title: "Reading", imgSrc: readingBanner, link: "/reading" },
+    { title: "Movies", imgSrc: moviesBanner, link: "/movies" }
   ]
 };
 

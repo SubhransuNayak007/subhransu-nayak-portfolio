@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './FavoriteMoviesRow.css';
+import './Movies.css';
 import { FaPlay, FaPlus, FaThumbsUp, FaTimes } from 'react-icons/fa';
 
 import breakingBadImg from '../images/breaking_bad_poster.png';
@@ -78,38 +78,40 @@ const moviesData: Movie[] = [
   }
 ];
 
-const FavoriteMoviesRow: React.FC = () => {
+const Movies: React.FC = () => {
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
 
   const openModal = (movie: Movie) => {
     setSelectedMovie(movie);
-    document.body.style.overflow = 'hidden'; // Disable background scrolling
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setSelectedMovie(null);
-    document.body.style.overflow = 'unset'; // Enable background scrolling
+    document.body.style.overflow = 'unset';
   };
 
   return (
-    <div className="favorite-movies-row">
-      <h2 className="row-title">Subhransu's Favorite Movies & Series</h2>
-      <div className="card-row">
+    <div className="movies-page-container">
+      <div className="movies-header-section">
+        <h2 className="movies-title">🎬 Favorite Movies & Series</h2>
+        <p className="movies-intro">A selection of cinematic masterpieces and stories that inspired me.</p>
+      </div>
+
+      <div className="movies-grid">
         {moviesData.map((movie, index) => (
           <div
             key={index}
-            className="movie-card"
+            className="movies-page-card"
             onClick={() => openModal(movie)}
             style={{ animationDelay: `${index * 0.15}s` }}
           >
-            <img src={movie.imgSrc} alt={movie.title} className="movie-image" />
-            <div className="movie-card-overlay">
-              <div className="movie-card-info">
-                <h4 className="movie-card-title">{movie.title}</h4>
-                <div className="movie-card-metadata">
-                  <span className="match-tag">{movie.match}</span>
-                  <span className="type-tag">{movie.type}</span>
-                </div>
+            <img src={movie.imgSrc} alt={movie.title} className="movies-page-card-image" />
+            <div className="movies-page-card-overlay">
+              <h4 className="movies-page-card-title">{movie.title}</h4>
+              <div className="movies-page-card-meta">
+                <span className="movies-match">{movie.match}</span>
+                <span className="movies-type">{movie.type}</span>
               </div>
             </div>
           </div>
@@ -170,4 +172,4 @@ const FavoriteMoviesRow: React.FC = () => {
   );
 };
 
-export default FavoriteMoviesRow;
+export default Movies;

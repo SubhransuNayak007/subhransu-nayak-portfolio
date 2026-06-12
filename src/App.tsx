@@ -10,6 +10,7 @@ import ContactMe from './pages/ContactMe';
 import Layout from './Layout';
 import Music from './pages/Music';
 import Reading from './pages/Reading';
+import Movies from './pages/Movies';
 import Certifications from './pages/Certifications';
 
 const App: React.FC = () => {
@@ -24,6 +25,7 @@ const App: React.FC = () => {
       <Route path="/contact-me" element={<Layout><ContactMe /></Layout>} />
       <Route path="/music" element={<Layout><Music /></Layout>} />
       <Route path="/reading" element={<Layout><Reading /></Layout>} />
+      <Route path="/movies" element={<Layout><Movies /></Layout>} />
       <Route path="/certifications" element={<Layout><Certifications /></Layout>} />
     </Routes>
   );

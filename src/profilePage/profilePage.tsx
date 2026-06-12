@@ -5,7 +5,6 @@ import './ProfilePage.css';
 import ProfileBanner from './ProfileBanner';
 import TopPicksRow from './TopPicksRow';
 import ContinueWatching from './ContinueWatching';
-import FavoriteMoviesRow from './FavoriteMoviesRow';
 
 type ProfileType = 'recruiter' | 'developer' | 'stalker' | 'adventure';
 
@@ -28,7 +27,6 @@ const ProfilePage: React.FC = () => {
       </div>
       <TopPicksRow profile={profile} />
       <ContinueWatching profile={profile} />
-      <FavoriteMoviesRow />
     </>
   );
 };

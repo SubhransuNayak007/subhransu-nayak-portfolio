@@ -1,65 +1,69 @@
-/* FavoriteMoviesRow.css */
+/* Movies.css */
 
-.favorite-movies-row {
-  margin: 3vw 4% 0;
+.movies-page-container {
+  padding: 100px 24px 120px;
+  background-color: #141414;
   color: #fff;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-.favorite-movies-row .row-title {
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
-  font-weight: 700;
-  margin-bottom: 15px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  letter-spacing: 0.5px;
+.movies-header-section {
+  text-align: center;
+  margin-bottom: 48px;
+  animation: moviesFadeInUp 0.8s ease-out;
 }
 
-.favorite-movies-row .card-row {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px 0 25px;
-  scrollbar-width: none; /* Firefox */
-  -webkit-overflow-scrolling: touch; /* smooth mobile momentum scroll */
+.movies-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 12px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.favorite-movies-row .card-row::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+.movies-intro {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: #bcbcbc;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-/* Movie Card */
-.movie-card {
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 190px));
+  gap: 28px;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: moviesFadeInUp 1s ease-out;
+}
+
+.movies-page-card {
   position: relative;
-  flex: 0 0 auto;
-  width: 170px;
-  height: 255px;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
   background-color: #2f2f2f;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  transform-origin: center center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
   transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s ease;
-  animation: movieCardFadeIn 0.6s ease-out forwards;
-  opacity: 0;
-  user-select: none;
+  aspect-ratio: 2/3;
+  width: 100%;
 }
 
-.movie-card:hover {
+.movies-page-card:hover {
   transform: scale(1.06);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 10px rgba(229, 9, 20, 0.2);
-  z-index: 10;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7), 0 0 12px rgba(229, 9, 20, 0.25);
 }
 
-.movie-image {
+.movies-page-card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Movie Overlay on Hover */
-.movie-card-overlay {
+.movies-page-card-overlay {
   position: absolute;
   left: 0;
   right: 0;
@@ -67,46 +71,43 @@
   height: 50%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
   display: flex;
-  align-items: flex-end;
-  padding: 12px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.movie-card:hover .movie-card-overlay {
+.movies-page-card:hover .movies-page-card-overlay {
   opacity: 1;
 }
 
-.movie-card-info {
-  width: 100%;
-}
-
-.movie-card-title {
+.movies-page-card-title {
   margin: 0 0 4px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: #fff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.movie-card-metadata {
+.movies-page-card-meta {
   display: flex;
   gap: 8px;
   font-size: 11px;
 }
 
-.match-tag {
+.movies-match {
   color: #46d369;
   font-weight: 700;
 }
 
-.type-tag {
+.movies-type {
   color: #bcbcbc;
 }
 
-/* Modal Styling */
+/* Modal styling is imported/shared from FavoriteMoviesRow.css, but repeated here for safety */
 .movie-modal-overlay {
   position: fixed;
   top: 0;
@@ -120,7 +121,7 @@
   align-items: center;
   padding: 20px;
   backdrop-filter: blur(5px);
-  animation: modalFadeIn 0.3s ease forwards;
+  animation: moviesFadeIn 0.3s ease forwards;
 }
 
 .movie-modal-content {
@@ -133,18 +134,7 @@
   overflow-y: auto;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
   border: 1px solid #303030;
-  animation: modalScaleUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  scrollbar-width: thin;
-  scrollbar-color: #3e3e3e #181818;
-}
-
-.movie-modal-content::-webkit-scrollbar {
-  width: 6px;
-}
-
-.movie-modal-content::-webkit-scrollbar-thumb {
-  background-color: #3e3e3e;
-  border-radius: 3px;
+  animation: moviesScaleUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 .close-button {
@@ -172,7 +162,6 @@
   transform: scale(1.05);
 }
 
-/* Modal Banner */
 .modal-banner {
   position: relative;
   height: 320px;
@@ -256,7 +245,6 @@
   transform: scale(1.05);
 }
 
-/* Modal Details */
 .modal-details {
   display: grid;
   grid-template-columns: 1.6fr 1fr;
@@ -305,7 +293,6 @@
   font-weight: 400;
 }
 
-/* Modal Details Right */
 .modal-details-right {
   display: flex;
   flex-direction: column;
@@ -325,11 +312,11 @@
   color: #fff;
 }
 
-/* Keyframe Animations */
-@keyframes movieCardFadeIn {
+/* Animations */
+@keyframes moviesFadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -337,16 +324,12 @@
   }
 }
 
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+@keyframes moviesFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes modalScaleUp {
+@keyframes moviesScaleUp {
   from {
     opacity: 0;
     transform: scale(0.85);
@@ -357,32 +340,26 @@
   }
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .favorite-movies-row {
-    margin: 20px 4% 0;
+  .movies-page-container {
+    padding: 80px 16px 120px;
   }
-  
-  .favorite-movies-row .card-row {
-    gap: 12px;
-    padding-bottom: 15px;
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 140px));
+    gap: 16px;
   }
-  
-  .movie-card {
-    width: 130px;
-    height: 195px;
-  }
-  
-  .movie-card-overlay {
+
+  .movies-page-card-overlay {
     padding: 8px;
     height: 60%;
   }
-  
-  .movie-card-title {
+
+  .movies-page-card-title {
     font-size: 12px;
   }
-  
-  .movie-card-metadata {
+
+  .movies-page-card-meta {
     font-size: 10px;
     gap: 6px;
   }
@@ -411,7 +388,7 @@
     gap: 24px;
     padding: 16px 20px 24px;
   }
-  
+
   .modal-details-right {
     border-top: 1px solid #303030;
     padding-top: 16px;

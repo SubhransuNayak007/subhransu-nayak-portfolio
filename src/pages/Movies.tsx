@@ -3,10 +3,10 @@ import './Movies.css';
 import { FaPlay, FaPlus, FaThumbsUp, FaTimes } from 'react-icons/fa';
 
 import breakingBadImg from '../images/breaking_bad_poster.jpg';
-import threeIdiotsImg from '../images/3_idiots_poster.png';
-import interstellarImg from '../images/interstellar_poster.png';
-import moneyHeistImg from '../images/money_heist_poster.png';
-import squidGameImg from '../images/squid_game_poster.png';
+import threeIdiotsImg from '../images/3_idiots_poster.jpg';
+import interstellarImg from '../images/interstellar_poster.jpg';
+import moneyHeistImg from '../images/money_heist_poster.jpg';
+import squidGameImg from '../images/squid_game_poster.jpg';
 
 interface Movie {
   title: string;

@@ -1,20 +1,31 @@
+/* ═══════════════════════════════════════════
+   PROFILE PAGE WRAPPER — Mobile-First
+   ═══════════════════════════════════════════ */
+
 .profile-page {
   display: flex;
   align-items: center;
-  height: 75vh;
+  min-height: 55vh;
   color: #fff;
   background-size: cover;
   background-position: center;
+  margin-top: 0;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+/* Add bottom padding after all rows so content isn't behind the bottom nav */
+.profile-page ~ .top-picks-row,
+.profile-page ~ .continue-watching-row {
+  box-sizing: border-box;
 }
 
+/* Ensure page scrolls properly past the floating bottom nav on mobile */
 @media (max-width: 768px) {
   .profile-page {
-    height: 100vh;
-    padding-bottom: 5rem;
+    min-height: 45vh;
+  }
+
+  /* Extra bottom padding on the last section row */
+  .continue-watching-row:last-child {
+    padding-bottom: 100px;
   }
 }

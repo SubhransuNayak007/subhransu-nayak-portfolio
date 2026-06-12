@@ -1,12 +1,18 @@
+/* ═══════════════════════════════════════════
+   PROJECTS PAGE — Mobile-First
+   ═══════════════════════════════════════════ */
+
 .projects-container {
-  padding: 120px 20px;
+  padding: 100px 16px 120px;
   background-color: #141414;
   color: #fff;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 20px;
   justify-content: center;
 }
@@ -15,7 +21,7 @@
   background: #1e1e1e;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 15px rgba(160, 16, 16, 0.6); /* Base shadow */
+  box-shadow: 0 6px 15px rgba(160,16,16,0.4);
   opacity: 0;
   animation: fadeInUp 0.5s forwards ease-in-out;
   animation-delay: var(--delay);
@@ -23,45 +29,54 @@
 }
 
 .project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(244, 0, 13, 0.6); /* Netflix shadow */
+  transform: scale(1.03);
+  box-shadow: 0 10px 24px rgba(229,9,20,0.55);
+}
+
+.project-card:active {
+  transform: scale(0.98);
+}
+
+.project-card.clickable {
   cursor: pointer;
 }
 
 .project-image {
   width: 100%;
-  height: 200px;
+  height: clamp(160px, 40vw, 220px);
   object-fit: cover;
   border-bottom: 2px solid #e50914;
   transition: transform 0.3s ease;
+  display: block;
 }
 
 .project-card:hover .project-image {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .project-details {
-  padding: 20px;
+  padding: 18px 16px 20px;
 }
 
 .project-details h3 {
-  font-size: 1.2rem;
-  color: #e74e56;
-  margin-bottom: 10px;
+  font-size: clamp(1rem, 4vw, 1.25rem);
   color: #e50914;
+  margin: 0 0 10px;
+  line-height: 1.2;
 }
 
 .project-details p {
-  font-size: 0.8rem;
-  margin-bottom: 15px;
-  line-height: 1.2rem;
+  font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+  margin: 0 0 14px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.8);
 }
 
 .tech-used {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 8px;
+  margin-top: 14px;
 }
 
 .tech-badge {
@@ -71,29 +86,28 @@
   border-radius: 12px;
   background: #2c2c2c;
   color: #fff;
-  font-size: 0.8rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: clamp(0.7rem, 2vw, 0.82rem);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.tech-badge:hover {
-  transform: scale(1.1);
+.tech-badge:hover,
+.tech-badge:active {
   background-color: #e50914;
-  color: #fff;
-  box-shadow: 0 4px 10px rgba(229, 9, 20, 0.6); /* Netflix shadow */
+  box-shadow: 0 4px 10px rgba(229,9,20,0.5);
 }
 
 .tech-badge svg {
   margin-right: 5px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
-.project-card.clickable {
-  cursor: pointer;
-}
-
+/* Visit Site Button */
 .project-action {
-  margin-top: 20px;
+  margin-top: 16px;
   display: flex;
   justify-content: flex-end;
 }
@@ -101,8 +115,8 @@
 .visit-btn {
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
-  font-size: 0.75rem;
+  padding: 7px 16px;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -110,11 +124,41 @@
   background-color: #e50914;
   border-radius: 4px;
   transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  -webkit-tap-highlight-color: transparent;
 }
 
-.project-card.clickable:hover .visit-btn {
-  background-color: #ff0f1b;
-  box-shadow: 0 0 12px rgba(229, 9, 20, 0.9);
-  transform: translateY(-2px);
+.project-card.clickable:hover .visit-btn,
+.project-card.clickable:active .visit-btn {
+  background-color: #ff1a26;
+  box-shadow: 0 0 14px rgba(229,9,20,0.85);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .projects-container {
+    padding: 80px 12px 110px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-image {
+    height: clamp(180px, 50vw, 240px);
+  }
+}
+
+@media (max-width: 380px) {
+  .tech-badge {
+    font-size: 0.68rem;
+    padding: 4px 8px;
+  }
 }

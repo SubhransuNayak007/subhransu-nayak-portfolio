@@ -1,6 +1,8 @@
-/* Navbar.css */
+/* ═══════════════════════════════════════════
+   NAVBAR — DESKTOP TOP BAR + MOBILE BOTTOM TAB
+   ═══════════════════════════════════════════ */
 
-/* Main Navbar Styling */
+/* ── Top Navbar (Desktop) ──────────────────── */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -9,17 +11,21 @@
   position: fixed;
   width: 100%;
   top: 0;
-  background-image: linear-gradient(180deg, rgb(0 0 1 / 90%) 10%, transparent 100%);
-  padding: 20px;
-  z-index: 3;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(180deg, rgba(0,0,1,0.92) 10%, transparent 100%);
+  padding: 14px 24px;
+  z-index: 100;
   transition: background-color 0.3s ease;
+  box-sizing: border-box;
 }
 
 .navbar.scrolled {
-  background-color: #141414; /* Netflix black when scrolled */
+  background-color: #141414;
 }
 
-.navbar-left, .navbar-right {
+.navbar-left,
+.navbar-right {
   display: flex;
   align-items: center;
 }
@@ -31,7 +37,7 @@
   margin-top: 5px;
 }
 
-/* Navbar Links */
+/* Desktop nav links */
 .navbar-links {
   display: flex;
   list-style: none;
@@ -43,12 +49,12 @@
 .navbar-links li a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: 1rem;
   transition: color 0.3s;
 }
 
 .navbar-links li a:hover {
-  color: #e50914; /* Netflix red */
+  color: #e50914;
 }
 
 /* Profile Icon */
@@ -57,122 +63,230 @@
   height: 30px;
   border-radius: 15%;
   transition: transform 0.3s;
-  margin-right: 3rem;
+  margin-right: 1rem;
   cursor: pointer;
 }
 
-/* Hide the hamburger and sidebar in desktop view */
-.hamburger,
-.sidebar-overlay,
+/* Hamburger — hidden by default on desktop */
+.hamburger {
+  display: none;
+}
+
+/* Sidebar and overlay — hidden on desktop */
+.sidebar-overlay {
+  display: none;
+}
+
 .sidebar {
   display: none;
 }
 
-/* Mobile-specific styling */
+/* ─────────────────────────────────────────────
+   MOBILE BOTTOM TAB BAR (≤768px)
+   ───────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .navbar-logo img {
-    height: 20px;
-    margin-right: auto;
-  }
-  .profile-icon {
-    width: 24px;
-    height: 24px;
+
+  /* Hide the top desktop navbar on mobile */
+  .navbar {
+    padding: 10px 16px;
+    background-image: linear-gradient(180deg, rgba(0,0,1,0.95) 0%, transparent 100%);
   }
 
-
-  /* Hide Navbar Links in Mobile */
   .navbar-links {
     display: none;
   }
 
-  /* Show Hamburger Menu */
+  .profile-icon {
+    width: 26px;
+    height: 26px;
+    margin-right: 0;
+  }
+
+  /* ── Bottom Tab Bar ──────────────────────── */
   .hamburger {
-    display: block;
+    display: none; /* replaced by bottom-nav */
+  }
+
+  /* Fixed bottom navigation bar */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    bottom: env(safe-area-inset-bottom, 0px);
+    z-index: 200;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(14, 14, 14, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 10px 8px calc(10px + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.5);
+  }
+
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex: 1;
+    padding: 6px 4px;
+    text-decoration: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 12px;
+    transition: color 0.2s ease, background 0.2s ease;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    background: transparent;
+    border: none;
   }
 
-  .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px;
-    transition: 0.3s;
+  .mobile-nav-item:active {
+    background: rgba(229,9,20,0.1);
+    transform: scale(0.95);
   }
 
-  /* Sidebar Overlay */
+  .mobile-nav-item.active {
+    color: #fff;
+  }
+
+  .mobile-nav-icon-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 32px;
+    border-radius: 20px;
+    transition: background 0.25s ease;
+  }
+
+  .mobile-nav-item.active .mobile-nav-icon-wrap {
+    background: rgba(229,9,20,0.18);
+  }
+
+  .mobile-nav-icon {
+    font-size: 1.35rem;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-nav-item.active .mobile-nav-icon {
+    color: #e50914;
+    transform: scale(1.12);
+  }
+
+  .mobile-nav-label {
+    font-size: 9.5px;
+    line-height: 1;
+  }
+
+  /* ── Sidebar Drawer (for mobile hamburger, if kept) ── */
   .sidebar-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 3;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 150;
     display: none;
+    animation: overlayFadeIn 0.25s ease;
   }
 
   .sidebar-overlay.open {
     display: block;
   }
 
-  /* Sidebar Styling */
+  @keyframes overlayFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
-    width: 70%;
-    background-color: #141414;
+    width: min(80vw, 300px);
+    background: #141414;
     color: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 60px 24px 40px;
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 4;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 160;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    overflow-y: auto;
   }
 
   .sidebar.open {
     transform: translateX(0);
   }
 
-  .sidebar-logo img {
-    height: 30px;
-    margin-bottom: 20px;
+  .sidebar-logo {
+    margin-bottom: 40px;
   }
 
   .sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
   }
+
   .sidebar ul li {
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    padding: 0;
+    margin-bottom: 4px;
   }
-  
+
   .sidebar ul li a {
-    color: #fff;
+    color: rgba(255,255,255,0.85);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 14px;
+    padding: 14px 12px;
+    border-radius: 8px;
+    transition: background 0.2s ease, color 0.2s ease;
   }
 
-  /* Close button inside the sidebar */
+  .sidebar ul li a:hover,
+  .sidebar ul li a:active {
+    background: rgba(229,9,20,0.12);
+    color: #fff;
+  }
+
   .hamburger-icon {
-    font-size: 1.5rem;
-    margin-right: 5px;
+    font-size: 1.4rem;
+    color: #e50914;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   VERY SMALL PHONES (≤380px)
+   ───────────────────────────────────────────── */
+@media (max-width: 380px) {
+  .mobile-nav-label {
+    display: none;
   }
 
-  /* Sidebar adjustments */
-  .sidebar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .mobile-nav-icon-wrap {
+    width: 38px;
+    height: 30px;
+  }
+
+  .mobile-nav-icon {
+    font-size: 1.2rem;
   }
 }

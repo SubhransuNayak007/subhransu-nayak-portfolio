@@ -1,38 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaHome, FaBriefcase, FaTools, FaProjectDiagram, FaEnvelope } from 'react-icons/fa'; // Import icons
+import { FaHome, FaBriefcase, FaTools, FaProjectDiagram, FaEnvelope } from 'react-icons/fa';
 import './Navbar.css';
 import blueImage from '../images/blue.png';
+
+const NAV_ITEMS = [
+  { to: '/browse',          label: 'Home',      Icon: FaHome },
+  { to: '/work-experience', label: 'Experience', Icon: FaBriefcase },
+  { to: '/skills',          label: 'Skills',     Icon: FaTools },
+  { to: '/projects',        label: 'Projects',   Icon: FaProjectDiagram },
+  { to: '/contact-me',      label: 'Hire Me',    Icon: FaEnvelope },
+];
 
 const Navbar: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const profileImage = location.state?.profileImage || blueImage;
 
-  const handleScroll = () => {
-    setIsScrolled(window.scrollY > 80);
-  };
-
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 80);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
-
   const LogoText = () => (
-    <div className="navbar-logo-curved" style={{ marginRight: '15px', marginLeft: '5px', display: 'flex', alignItems: 'center' }}>
-      <svg viewBox="0 0 260 45" width="180" height="31" xmlns="http://www.w3.org/2000/svg">
+    <div className="navbar-logo-curved" style={{ display: 'flex', alignItems: 'center' }}>
+      <svg viewBox="0 0 260 45" width="170" height="30" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          {/* Path curving upwards in the middle (arch/rainbow curve) */}
           <path id="navbarCurve" d="M 10,38 Q 130,16 250,38" fill="none" />
           <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#FF3A3A" />
@@ -60,48 +55,52 @@ const Navbar: React.FC = () => {
     </div>
   );
 
+  const currentPath = location.pathname;
+
   return (
     <>
+      {/* ── Top Navbar ─────────────────── */}
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-left">
-          <Link to="/" style={{ textDecoration: 'none' }}>
+          <Link to="/" style={{ textDecoration: 'none', marginRight: '15px' }}>
             <LogoText />
           </Link>
           <ul className="navbar-links">
-            <li><Link to="/browse">Home</Link></li>
-            <li><Link to="/work-experience">Professional</Link></li>
-            <li><Link to="/skills">Skills</Link></li>
-            <li><Link to="/projects">Projects</Link></li>
-            <li><Link to="/contact-me">Hire Me</Link></li>
+            {NAV_ITEMS.map(({ to, label }) => (
+              <li key={to}><Link to={to}>{label}</Link></li>
+            ))}
           </ul>
         </div>
         <div className="navbar-right">
-          {/* Hamburger menu for mobile */}
-          <div className="hamburger" onClick={toggleSidebar}>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <img src={profileImage} alt="Profile" className="profile-icon" onClick={() => { navigate('/browse') }} />
+          <img
+            src={profileImage}
+            alt="Profile"
+            className="profile-icon"
+            onClick={() => navigate('/browse')}
+          />
         </div>
       </nav>
 
-      {/* Sidebar Overlay */}
-      <div className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`} onClick={closeSidebar}></div>
-
-      {/* Sidebar (only visible on mobile) */}
-      <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-        <div className="sidebar-logo">
-          <LogoText />
-        </div>
-        <ul>
-          <li><Link to="/browse" onClick={closeSidebar}><FaHome /> Home</Link></li>
-          <li><Link to="/work-experience" onClick={closeSidebar}><FaBriefcase /> Professional</Link></li>
-          <li><Link to="/skills" onClick={closeSidebar}><FaTools /> Skills</Link></li>
-          <li><Link to="/projects" onClick={closeSidebar}><FaProjectDiagram /> Projects</Link></li>
-          <li><Link to="/contact-me" onClick={closeSidebar}><FaEnvelope /> Hire Me</Link></li>
-        </ul>
-      </div>
+      {/* ── Mobile Bottom Tab Bar ──────── */}
+      <nav className="mobile-bottom-nav" role="navigation" aria-label="Main navigation">
+        {NAV_ITEMS.map(({ to, label, Icon }) => {
+          const isActive = currentPath === to || currentPath.startsWith(to + '/');
+          return (
+            <Link
+              key={to}
+              to={to}
+              className={`mobile-nav-item${isActive ? ' active' : ''}`}
+              aria-label={label}
+              aria-current={isActive ? 'page' : undefined}
+            >
+              <div className="mobile-nav-icon-wrap">
+                <Icon className="mobile-nav-icon" />
+              </div>
+              <span className="mobile-nav-label">{label}</span>
+            </Link>
+          );
+        })}
+      </nav>
     </>
   );
 };

@@ -1,31 +1,48 @@
+/* ═══════════════════════════════════════════
+   BROWSE / WHO'S WATCHING — Mobile-First
+   ═══════════════════════════════════════════ */
+
 .browse-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #141414;
+  padding: 40px 16px 100px;
+  box-sizing: border-box;
 }
 
 .who-is-watching {
   color: #fff;
-    font-size: 3.5vw;
-    font-weight: unset;
-    width: 100%;
-    text-align: center;
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .profiles {
   display: flex;
-  gap: 20px;
+  gap: clamp(16px, 4vw, 28px);
   flex-wrap: wrap;
-  margin-bottom: 10rem;
   justify-content: center;
+  padding-bottom: 20px;
 }
 
+@media (max-width: 600px) {
+  .browse-container {
+    padding-bottom: 120px;
+    justify-content: flex-start;
+    padding-top: 80px;
+  }
 
-@media (max-width: 768px) {
   .who-is-watching {
-    font-size: 30px;
+    font-size: clamp(1.4rem, 6vw, 2rem);
+    margin-bottom: 28px;
+  }
+
+  .profiles {
+    gap: 16px;
   }
 }

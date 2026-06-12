@@ -1,39 +1,55 @@
+/* ═══════════════════════════════════════════
+   WORK EXPERIENCE TIMELINE — Mobile-First
+   ═══════════════════════════════════════════ */
+
 .vertical-timeline-element-content {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .vertical-timeline-element-content:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
-
 
 .timeline-container {
   text-align: center;
-  padding: 20px;
-  margin-top: 5rem;
+  padding: clamp(16px, 4vw, 20px) clamp(12px, 4vw, 20px);
+  margin-top: clamp(4rem, 10vw, 5rem);
+  /* Bottom padding to clear the mobile bottom tab bar */
+  padding-bottom: 100px;
+  box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .timeline-title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
   color: #fff;
-  font-weight: bold;
-  margin-bottom: 40px;
+  font-weight: 700;
+  margin-bottom: 36px;
   display: inline-block;
   text-align: center;
-  opacity: 0; /* Start invisible */
-  transform: translateY(20px); /* Start slightly lower */
-  animation: fadeInUp 2s ease-in-out both; /* Animation properties */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.2s ease-in-out both;
 }
 
-/* Define the keyframes for the fade-in-up animation */
 @keyframes fadeInUp {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(20px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Mobile: stack timeline vertically and simplify hover */
+@media (max-width: 768px) {
+  .vertical-timeline-element-content:hover {
+    transform: none;
+  }
+  .vertical-timeline-element-content:active {
+    transform: scale(0.99);
   }
 }

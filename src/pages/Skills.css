@@ -1,36 +1,37 @@
-/* ═══════════════════════════════════════════════
-   PREMIUM SKILLS PAGE — NETFLIX / LUXURY STYLE
+/* ═══════════════════════════════════════════
+   PREMIUM SKILLS PAGE — Netflix / Luxury Style
    Background: #141414 | Cards: #181818
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 
 .skills-page-wrapper {
   background-color: #141414;
   min-height: 100vh;
-  padding: 60px 40px 100px;
+  padding: 80px 20px 120px;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .skills-container {
   width: 100%;
   max-width: 1200px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .skill-category-section {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   text-align: center;
 }
 
 .category-title-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 .category-title {
   font-family: 'Netflix Sans', Helvetica, Arial, sans-serif;
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
   font-weight: 700;
   color: #fff;
   position: relative;
@@ -39,7 +40,7 @@
   padding-bottom: 10px;
 }
 
-/* Curved/Straight Netflix Red underline under category title */
+/* Netflix red underline */
 .category-title::after {
   content: '';
   position: absolute;
@@ -49,50 +50,56 @@
   height: 4px;
   background-color: #e50914;
   border-radius: 2px;
-  box-shadow: 0 0 10px rgba(229, 9, 20, 0.6);
+  box-shadow: 0 0 10px rgba(229,9,20,0.6);
 }
 
 .skills-flex-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
+  gap: 16px;
   margin-top: 10px;
 }
 
-/* Premium Dark Card Layout */
+/* Premium Dark Card */
 .skill-card {
   background: #181818;
   border-radius: 12px;
-  padding: 35px 20px;
-  width: 180px;
-  min-height: 200px;
+  padding: clamp(20px, 4vw, 35px) clamp(12px, 3vw, 20px);
+  width: clamp(130px, 28vw, 180px);
+  min-height: clamp(150px, 30vw, 200px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(255,255,255,0.04);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .skill-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   background: #202020;
-  border-color: rgba(229, 9, 20, 0.35);
-  box-shadow: 0 12px 30px rgba(229, 9, 20, 0.2);
+  border-color: rgba(229,9,20,0.35);
+  box-shadow: 0 12px 30px rgba(229,9,20,0.2);
   cursor: pointer;
 }
 
-/* Icon style */
+.skill-card:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+/* Icon */
 .icon {
-  font-size: 3.2rem;
-  color: #e50914; /* Netflix red */
-  margin-bottom: 22px;
+  font-size: clamp(2.4rem, 6vw, 3.2rem);
+  color: #e50914;
+  margin-bottom: clamp(12px, 3vw, 22px);
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 2px 8px rgba(229, 9, 20, 0.4));
+  filter: drop-shadow(0 2px 8px rgba(229,9,20,0.4));
   transition: transform 0.3s ease;
 }
 
@@ -102,44 +109,47 @@
 
 .skill-name {
   font-family: 'Netflix Sans', Helvetica, Arial, sans-serif;
-  font-size: 1.25rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   font-weight: 700;
   color: #fff;
-  margin: 0 0 12px 0;
+  margin: 0 0 8px 0;
   text-align: center;
   letter-spacing: 0.5px;
 }
 
 .skill-description {
-  font-size: 0.85rem;
+  font-size: clamp(0.72rem, 1.8vw, 0.85rem);
   color: #8c8c8c;
   margin: 0;
   text-align: center;
-  line-height: 1.55;
+  line-height: 1.5;
   font-weight: 400;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Mobile */
+@media (max-width: 600px) {
   .skills-page-wrapper {
-    padding: 40px 20px 80px;
+    padding: 70px 12px 110px;
   }
-  .category-title {
-    font-size: 1.8rem;
+
+  .skills-flex-grid {
+    gap: 12px;
   }
+
   .skill-card {
-    width: 140px;
-    min-height: 180px;
-    padding: 25px 15px;
+    width: calc(50% - 8px);
+    min-width: 0;
   }
+}
+
+@media (max-width: 380px) {
+  .skill-card {
+    width: calc(50% - 6px);
+    padding: 18px 10px;
+  }
+
   .icon {
-    font-size: 2.6rem;
-    margin-bottom: 15px;
-  }
-  .skill-name {
-    font-size: 1.05rem;
-  }
-  .skill-description {
-    font-size: 0.78rem;
+    font-size: 2rem;
+    margin-bottom: 10px;
   }
 }

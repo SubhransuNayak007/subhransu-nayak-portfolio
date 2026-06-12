@@ -1,40 +1,57 @@
-.continue-watching-row {
-  padding: 20px;
-  color: #fff;
-}
+/* ═══════════════════════════════════════════
+   CONTINUE WATCHING — Horizontal Touch Scroll
+   ═══════════════════════════════════════════ */
 
-.continue-watching-row:hover {
- cursor: pointer;
+.continue-watching-row {
+  padding: 16px;
+  color: #fff;
+  /* Bottom padding so content isn't hidden behind mobile bottom nav */
+  padding-bottom: 90px;
 }
 
 .row-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+  margin-bottom: 12px;
+  padding: 0 4px;
 }
 
+/* Touch-optimized horizontal scroll */
 .card-row {
   display: flex;
   gap: 10px;
   overflow-x: auto;
+  overflow-y: visible;
   padding-bottom: 10px;
-  scrollbar-width: none; /* For Firefox */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
 .card-row::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Edge */
+  display: none;
 }
 
 .pick-card {
   position: relative;
-  min-width: 150px;
   flex: 0 0 auto;
-  border-radius: 5px;
+  min-width: clamp(130px, 36vw, 200px);
+  height: clamp(90px, 25vw, 150px);
+  border-radius: 6px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
+  text-decoration: none;
+  display: block;
+  scroll-snap-align: start;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-x;
 }
 
 .pick-card:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  transform: scale(1.05);
+}
+
+.pick-card:active {
+  transform: scale(0.97);
 }
 
 .pick-image {
@@ -44,31 +61,50 @@
   object-fit: cover;
 }
 
+/* Gradient overlay — always visible on mobile, hidden on desktop hover */
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Blackish overlay */
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  padding-bottom: 10px;
   opacity: 1;
   transition: opacity 0.3s ease;
 }
 
-.pick-card:hover .overlay {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .overlay {
+    opacity: 0;
+    align-items: center;
+    padding-bottom: 0;
+    background: rgba(0,0,0,0.5);
+  }
+  .pick-card:hover .overlay {
+    opacity: 1;
+  }
 }
 
 .pick-label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: static;
+  transform: none;
   color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  font-weight: 700;
   text-align: center;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+  padding: 0 6px;
+}
+
+/* Tiny phones */
+@media (max-width: 380px) {
+  .continue-watching-row {
+    padding: 12px 10px 90px;
+  }
+
+  .pick-card {
+    min-width: 42vw;
+    height: 30vw;
+  }
 }

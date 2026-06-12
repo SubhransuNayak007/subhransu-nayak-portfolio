@@ -81,6 +81,10 @@
   display: none;
 }
 
+.mobile-bottom-nav {
+  display: none;
+}
+
 /* ─────────────────────────────────────────────
    MOBILE BOTTOM TAB BAR (≤768px)
    ───────────────────────────────────────────── */

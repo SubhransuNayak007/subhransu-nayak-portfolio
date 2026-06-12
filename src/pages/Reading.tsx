@@ -4,10 +4,6 @@ import React from 'react';
 import './Reading.css';
 import atomicHabits from '../images/atomic_habits.jpg';
 import richDadPoorDad from '../images/rich_dad_poor_dad.jpg';
-import alchemist from '../images/alchemist.jpg';
-import eatThatFrog from '../images/eat_that_frog.jpg';
-import vijayanikiAidhuMetlu from '../images/vijayaniki_aidu_metlu.jpg';
-import venneloAdapilla from '../images/vennelo_adapilla.jpeg';
 
 const books = [
   {
@@ -21,30 +17,6 @@ const books = [
     author: "Robert Kiyosaki",
     imgSrc: richDadPoorDad,
     description: "An eye-opener on wealth, assets, and financial literacy.",
-  },
-  {
-    title: "The Alchemist",
-    author: "Paulo Coelho",
-    imgSrc: alchemist,
-    description: "A magical journey of following one's dreams.",
-  },
-  {
-    title: "Eat That Frog",
-    author: "Brian Tracy",
-    imgSrc: eatThatFrog,
-    description: "A motivational book on overcoming procrastination.",
-  },
-  {
-    title: "Vijayaniki Aidhu Metlu",
-    author: "Yandamoori Veerendranath",
-    imgSrc: vijayanikiAidhuMetlu,
-    description: "An inspirational Telugu book for personal growth.",
-  },
-  {
-    title: "Vennelo Adapilla",
-    author: "Yandamoori Veerendranath",
-    imgSrc: venneloAdapilla,
-    description: "A classic Telugu romantic novel that touches the heart.",
   },
 ];
 

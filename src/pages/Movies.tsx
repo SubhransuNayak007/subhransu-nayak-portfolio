@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Movies.css';
 import { FaPlay, FaPlus, FaThumbsUp, FaTimes } from 'react-icons/fa';
 
-import breakingBadImg from '../images/breaking_bad_poster.png';
+import breakingBadImg from '../images/breaking_bad_poster.jpg';
 import threeIdiotsImg from '../images/3_idiots_poster.png';
 import interstellarImg from '../images/interstellar_poster.png';
 import moneyHeistImg from '../images/money_heist_poster.png';

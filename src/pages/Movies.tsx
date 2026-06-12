@@ -7,6 +7,8 @@ import threeIdiotsImg from '../images/3_idiots_poster.jpg';
 import interstellarImg from '../images/interstellar_poster.jpg';
 import moneyHeistImg from '../images/money_heist_poster.jpg';
 import squidGameImg from '../images/squid_game_poster.jpg';
+import strangerThingsImg from '../images/stranger_things_poster.jpg';
+import mirzapurImg from '../images/mirzapur_poster.jpg';
 
 interface Movie {
   title: string;
@@ -75,6 +77,28 @@ const moviesData: Movie[] = [
     cast: ["Lee Jung-jae", "Park Hae-soo", "Wi Ha-jun", "Jung Ho-yeon"],
     genres: ["Thriller", "Drama", "Mystery"],
     imgSrc: squidGameImg
+  },
+  {
+    title: "Stranger Things",
+    type: "TV Series",
+    match: "97% Match",
+    year: "2022",
+    duration: "4 Seasons",
+    description: "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.",
+    cast: ["Winona Ryder", "David Harbour", "Millie Bobby Brown", "Finn Wolfhard"],
+    genres: ["Sci-Fi", "Drama", "Mystery"],
+    imgSrc: strangerThingsImg
+  },
+  {
+    title: "Mirzapur",
+    type: "TV Series",
+    match: "98% Match",
+    year: "2024",
+    duration: "3 Seasons",
+    description: "A shocking incident at a wedding procession ignites a series of events, entangling the lives of two families in the lawless city of Mirzapur.",
+    cast: ["Pankaj Tripathi", "Ali Fazal", "Divyenndu", "Shweta Tripathi"],
+    genres: ["Crime", "Drama", "Action"],
+    imgSrc: mirzapurImg
   }
 ];
 

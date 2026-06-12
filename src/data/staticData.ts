@@ -10,21 +10,21 @@ export const staticProfileBanner: Record<string, ProfileBanner> = {
   recruiter: {
     backgroundImage: { url: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTZ5eWwwbjRpdWM1amxyd3VueHhteTVzajVjeGZtZGJ1dDc4MXMyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dg/16u7Ifl2T4zYfQ932F/giphy.gif" },
     headline: "Subhransu Nayak",
-    profileSummary: "12th-class secondary school science student from Berhampur, Odisha. Actively building frontend and backend foundations, combining logical structures with clean user experiences. Seeking opportunities to collaborate and build the next generation of web applications.",
+    profileSummary: "11th & 12th higher secondary science student at Khallikote College, Berhampur. Actively building frontend and backend foundations, combining logical structures with clean user experiences. Seeking opportunities to collaborate and build the next generation of web applications.",
     resumeLink: { url: "/Subhransu_Nayak_Resume.docx" },
     linkedinLink: "https://www.linkedin.com/posts/subhransu-nayak-4b33383a7_i-built-an-youtube-comment-automation-website-ugcPost-7469356091273986049-OHQF/"
   },
   developer: {
     backgroundImage: { url: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGNidDl5emZpejY2eGFxa2I4NW0zZGNpbWRlbnBrZ3N2dWhhbzM1MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TFPdmm3rdzeZ0kP3zG/giphy.gif" },
     headline: "Subhransu Nayak // Dev Profile",
-    profileSummary: "Began learning programming and software logic in Python in 2025. Fell in love with web layouts. Actively training on React, Node.js, Python, Java, C#, and C. Balances daytime secondary school classes with night-time coding modules.",
+    profileSummary: "Began learning programming and software logic in Python in 2025. Fell in love with web layouts. Actively training on React, Node.js, Python, Java, C#, and C. Balances daytime science classes at Khallikote College with night-time coding modules.",
     resumeLink: { url: "/Subhransu_Nayak_Resume.docx" },
     linkedinLink: "https://www.linkedin.com/posts/subhransu-nayak-4b33383a7_i-built-an-youtube-comment-automation-website-ugcPost-7469356091273986049-OHQF/"
   },
   stalker: {
     backgroundImage: { url: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc28yMjMyZmJ6eWtxbmNwdDV6cXk4dWZmcjFhZms2cXBjN2h5ZDJjeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QjZXUBUr89CkiWLPjL/giphy.gif" },
     headline: "Stalking Subhransu Nayak?",
-    profileSummary: "Here's what you need to know: Passionate beginner developer, quick learner, and secondary school student who spends nights building high-performance downloaders and simulator platforms.",
+    profileSummary: "Here's what you need to know: Passionate beginner developer, quick learner, and higher secondary science student at Khallikote College who spends nights building high-performance downloaders and simulator platforms.",
     resumeLink: { url: "/Subhransu_Nayak_Resume.docx" },
     linkedinLink: "https://www.linkedin.com/posts/subhransu-nayak-4b33383a7_i-built-an-youtube-comment-automation-website-ugcPost-7469356091273986049-OHQF/"
   },
@@ -38,24 +38,24 @@ export const staticProfileBanner: Record<string, ProfileBanner> = {
 };
 
 export const staticWorkPermit: WorkPermit = {
-  visaStatus: "Student (Secondary Education)",
+  visaStatus: "Student (Higher Secondary Education)",
   expiryDate: new Date("2028-06-30"),
-  summary: "Secondary School Science Student in Berhampur, Odisha, India. Started coding in 2025.",
+  summary: "Higher Secondary Science Student at Khallikote College, Berhampur. Started coding in 2025.",
   additionalInfo: "Seeking junior/intern frontend developer roles and collaborative open-source assignments. Legally eligible to work on remote contracts/internships."
 };
 
 export const staticTimeline: TimelineItem[] = [
   {
     timelineType: 'education',
-    name: "Higher Secondary Science Education",
-    title: "12th-Class Science Student",
+    name: "11th & 12th Higher Secondary Education",
+    title: "Khallikote College, Berhampur",
     techStack: "Physics, Chemistry, Mathematics, Computer Science",
     summaryPoints: [
-      "Currently pursuing secondary school science classes in Berhampur, Odisha.",
-      "Balances daytime formal school lectures with night-time coding modules.",
+      "Currently pursuing higher secondary science classes (11th & 12th grade) at Khallikote College.",
+      "Balances daytime formal lectures in Berhampur with night-time coding modules.",
       "Developing basic software concepts, logical thinking, and scientific foundations."
     ],
-    dateRange: "2024 - Present"
+    dateRange: "2025 - Present"
   },
   {
     timelineType: 'work',
@@ -133,9 +133,9 @@ export const staticCertifications: Certification[] = [
 export const staticContactMe: ContactMe = {
   profilePicture: { url: "https://avatars.githubusercontent.com/u/161400262?v=4" }, // Using GitHub avatar
   name: "Subhransu Nayak",
-  title: "Secondary School Science Student & Aspiring Developer",
-  summary: "12th-class secondary school science student from Berhampur, Odisha. Started learning programming in 2025 and fell in love with web layouts. Balances school classes with night-time coding modules.",
-  companyUniversity: "Science Student, Berhampur",
+  title: "Higher Secondary Science Student & Aspiring Developer",
+  summary: "11th & 12th higher secondary science student at Khallikote College, Berhampur. Started learning programming in 2025 and fell in love with web layouts. Balances school classes with night-time coding modules.",
+  companyUniversity: "Khallikote College, Berhampur",
   linkedinLink: "https://www.linkedin.com/posts/subhransu-nayak-4b33383a7_i-built-an-youtube-comment-automation-website-ugcPost-7469356091273986049-OHQF/",
   email: "subhransunayak007@gmail.com",
   phoneNumber: "+91 98765 43210"

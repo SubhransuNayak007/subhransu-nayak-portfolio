@@ -142,134 +142,254 @@ export const staticContactMe: ContactMe = {
 };
 
 export const staticSkills: Skill[] = [
-  // Backend Category
+  // Programming Languages Category
   {
-    name: "Ruby on Rails",
-    category: "Backend",
-    description: "Backend Framework",
-    icon: "SiRubyonrails"
+    name: "Python",
+    category: "Programming Languages",
+    description: "Scripting, automation, and core AI backend logic.",
+    icon: "SiPython"
   },
   {
-    name: "PHP",
-    category: "Backend",
-    description: "Backend Language",
-    icon: "SiPhp"
+    name: "JavaScript",
+    category: "Programming Languages",
+    description: "Dynamic web interaction and script handling.",
+    icon: "SiJavascript"
+  },
+  {
+    name: "TypeScript",
+    category: "Programming Languages",
+    description: "Type-safe scalability for complex applications.",
+    icon: "SiTypescript"
+  },
+  {
+    name: "C++",
+    category: "Programming Languages",
+    description: "High-performance systems and structures.",
+    icon: "SiCplusplus"
+  },
+  {
+    name: "C",
+    category: "Programming Languages",
+    description: "Low-level procedural logic and algorithms.",
+    icon: "SiC"
+  },
+  {
+    name: "Kotlin",
+    category: "Programming Languages",
+    description: "Modern language for Android and multiplatform apps.",
+    icon: "SiKotlin"
   },
   {
     name: "Java",
-    category: "Backend",
-    description: "Object-Oriented Programming Language",
+    category: "Programming Languages",
+    description: "Enterprise services and object-oriented backend applications.",
     icon: "FaJava"
+  },
+  {
+    name: "PHP",
+    category: "Programming Languages",
+    description: "Server-side web scripting and legacy configurations.",
+    icon: "SiPhp"
+  },
+
+  // Frontend Category
+  {
+    name: "React",
+    category: "Frontend",
+    description: "Interactive component-based UI engineering.",
+    icon: "FaReact"
+  },
+  {
+    name: "HTML&CSS",
+    category: "Frontend",
+    description: "Modern page structure, layout flow, and responsiveness.",
+    icon: "SiHtml5"
+  },
+  {
+    name: "CSS",
+    category: "Frontend",
+    description: "Advanced styling, keyframes, transitions, and layouts.",
+    icon: "SiCss"
+  },
+
+  // Backend Category
+  {
+    name: "Node.js",
+    category: "Backend",
+    description: "Event-driven runtime environment for servers.",
+    icon: "FaNodeJs"
+  },
+  {
+    name: "Ruby on Rails",
+    category: "Backend",
+    description: "Full-stack framework advocating rapid development.",
+    icon: "SiRubyonrails"
   },
   {
     name: "SpringBoot",
     category: "Backend",
-    description: "Java Framework",
+    description: "Robust Java microservice frameworks.",
     icon: "SiSpringboot"
-  },
-  {
-    name: "Node.js",
-    category: "Backend",
-    description: "Backend Runtime",
-    icon: "FaNodeJs"
   },
 
   // Databases Category
   {
     name: "MySQL",
     category: "Databases",
-    description: "Relational Database",
+    description: "Standard relational database systems.",
     icon: "SiMysql"
   },
   {
     name: "PostgreSQL",
     category: "Databases",
-    description: "Relational Database",
+    description: "Advanced open-source relational database structures.",
     icon: "SiPostgresql"
-  },
-
-  // Frontend Category
-  {
-    name: "HTML&CSS",
-    category: "Frontend",
-    description: "Web Markup and Styling",
-    icon: "SiHtml5"
-  },
-  {
-    name: "JavaScript",
-    category: "Frontend",
-    description: "Scripting Language",
-    icon: "SiJavascript"
-  },
-  {
-    name: "TypeScript",
-    category: "Frontend",
-    description: "Type-safe JavaScript",
-    icon: "SiTypescript"
-  },
-  {
-    name: "React",
-    category: "Frontend",
-    description: "Frontend Framework",
-    icon: "FaReact"
   },
 
   // Cloud & DevOps Category
   {
-    name: "CI/CD",
+    name: "Cloudflare",
     category: "Cloud & DevOps",
-    description: "Continuous Integration & Delivery",
-    icon: "SiImessage"
+    description: "Global proxy routing, caching, and domain security.",
+    icon: "SiCloudflare"
   },
   {
     name: "Netlify",
     category: "Cloud & DevOps",
-    description: "Frontend Deployment Platform",
+    description: "Static frontend deployments and deployment hooks.",
     icon: "SiNetlify"
   },
   {
     name: "Heroku",
     category: "Cloud & DevOps",
-    description: "Cloud Platform for Apps",
+    description: "PaaS cloud deployment for web services.",
     icon: "SiHeroku"
   },
   {
     name: "Kubernetes",
     category: "Cloud & DevOps",
-    description: "Container Orchestration",
+    description: "Container deployment automation and scale systems.",
     icon: "SiKubernetes"
   },
   {
     name: "GCP",
     category: "Cloud & DevOps",
-    description: "Google Cloud Platform",
+    description: "Google Cloud hosting and API services.",
     icon: "SiGooglecloud"
   },
   {
     name: "AWS",
     category: "Cloud & DevOps",
-    description: "Cloud Platform",
+    description: "Cloud servers and compute instances.",
     icon: "FaAws"
   },
-
-  // Other Tools & Practices Category
   {
     name: "Docker",
-    category: "Other Tools & Practices",
-    description: "Containerization",
+    category: "Cloud & DevOps",
+    description: "Application container containment and sandboxes.",
     icon: "FaDocker"
   },
   {
+    name: "CI/CD",
+    category: "Cloud & DevOps",
+    description: "Automated pipelines checking integration and builds.",
+    icon: "SiImessage"
+  },
+
+  // Design & Prototyping Category
+  {
+    name: "Figma",
+    category: "Design & Prototyping",
+    description: "Vector prototyping and high-fidelity layout wireframes.",
+    icon: "SiFigma"
+  },
+  {
+    name: "Framer",
+    category: "Design & Prototyping",
+    description: "Dynamic micro-interactions and production page layout.",
+    icon: "SiFramer"
+  },
+
+  // Development Tools Category
+  {
+    name: "VS Code",
+    category: "Development Tools",
+    description: "Advanced editor workspace and development configurations.",
+    icon: "VscVscode"
+  },
+  {
     name: "Git",
-    category: "Other Tools & Practices",
-    description: "Version Control",
+    category: "Development Tools",
+    description: "Distributed version control system.",
     icon: "SiGit"
   },
   {
+    name: "GitHub",
+    category: "Development Tools",
+    description: "Git hosting service and Actions automated pipeline integrations.",
+    icon: "SiGithub"
+  },
+  {
     name: "Vercel",
-    category: "Other Tools & Practices",
-    description: "Deployment Platform",
+    category: "Development Tools",
+    description: "Fast web application hosting and serverless systems.",
     icon: "SiVercel"
+  },
+  {
+    name: "Notion",
+    category: "Development Tools",
+    description: "Project management workspace, wikis, and documentation.",
+    icon: "SiNotion"
+  },
+
+  // AI & LLMs Category
+  {
+    name: "ChatGPT",
+    category: "AI & LLMs",
+    description: "OpenAI language models for programming logic assistance.",
+    icon: "SiOpenai"
+  },
+  {
+    name: "Claude",
+    category: "AI & LLMs",
+    description: "Anthropic's LLM optimized for complex coding and logic analysis.",
+    icon: "SiAnthropic"
+  },
+  {
+    name: "Gemini",
+    category: "AI & LLMs",
+    description: "Google's multimodal model for advanced context reasoning.",
+    icon: "SiGooglegemini"
+  },
+  {
+    name: "Ollama",
+    category: "AI & LLMs",
+    description: "Local runner for open-weight model instances (Llama, Mistral).",
+    icon: "SiOllama"
+  },
+  {
+    name: "CodeRabbit",
+    category: "AI & LLMs",
+    description: "AI code reviews checking pull requests on commits.",
+    icon: "SiCoderabbit"
+  },
+  {
+    name: "Hugging Face",
+    category: "AI & LLMs",
+    description: "Open community platform sharing AI models and datasets.",
+    icon: "SiHuggingface"
+  },
+  {
+    name: "Kiro",
+    category: "AI & LLMs",
+    description: "Vector and structural design layout assistant.",
+    icon: "FaBrain"
+  },
+  {
+    name: "Higgsfield",
+    category: "AI & LLMs",
+    description: "AI model generating video motions and segments.",
+    icon: "FaVideo"
   }
 ];
 

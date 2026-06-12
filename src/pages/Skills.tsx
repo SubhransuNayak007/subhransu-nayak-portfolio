@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Skills.css';
 import { getSkills } from '../queries/getSkills';
 
-import { FaReact, FaNodeJs, FaAws, FaDocker, FaJava, FaPython } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaAws, FaDocker, FaJava, FaVideo, FaBrain } from 'react-icons/fa';
 import { 
   SiRubyonrails, 
   SiTypescript, 
@@ -22,12 +22,28 @@ import {
   SiVercel,
   SiGit,
   SiJavascript,
-  SiHtml5
+  SiHtml5,
+  SiFigma,
+  SiFramer,
+  SiGithub,
+  SiCloudflare,
+  SiOpenai,
+  SiAnthropic,
+  SiGooglegemini,
+  SiOllama,
+  SiNotion,
+  SiCoderabbit,
+  SiPython,
+  SiCplusplus,
+  SiKotlin,
+  SiHuggingface,
+  SiCss
 } from 'react-icons/si';
+import { VscVscode } from 'react-icons/vsc';
 import { Skill } from '../types';
 
 const iconMap: { [key: string]: JSX.Element } = {
-  // Original names
+  // Original names / mappings
   SiRubyonrails: <SiRubyonrails />,
   FaNodeJs: <FaNodeJs />,
   SiSpringboot: <SiSpringboot />,
@@ -45,11 +61,34 @@ const iconMap: { [key: string]: JSX.Element } = {
   SiNetlify: <SiNetlify />,
   SiRabbitmq: <SiRabbitmq />,
   SiImessage: <SiImessage />,
+  SiFigma: <SiFigma />,
+  SiFramer: <SiFramer />,
+  SiGithub: <SiGithub />,
+  SiCloudflare: <SiCloudflare />,
+  SiOpenai: <SiOpenai />,
+  SiAnthropic: <SiAnthropic />,
+  SiGooglegemini: <SiGooglegemini />,
+  SiOllama: <SiOllama />,
+  SiNotion: <SiNotion />,
+  SiCoderabbit: <SiCoderabbit />,
+  SiPython: <SiPython />,
+  SiCplusplus: <SiCplusplus />,
+  SiC: <SiC />,
+  SiKotlin: <SiKotlin />,
+  SiHuggingface: <SiHuggingface />,
+  SiCss: <SiCss />,
+  VscVscode: <VscVscode />,
+  FaVideo: <FaVideo />,
+  FaBrain: <FaBrain />,
+  SiGit: <SiGit />,
+  SiVercel: <SiVercel />,
+  SiJavascript: <SiJavascript />,
+  SiHtml5: <SiHtml5 />,
   
-  // Static data names / values
+  // Name keys
   "React": <FaReact />,
   "Node": <FaNodeJs />,
-  "Python": <FaPython />,
+  "Python": <SiPython />,
   "Java": <FaJava />,
   "Tailwind": <SiTailwindcss />,
   "C": <SiC />,
@@ -71,7 +110,24 @@ const iconMap: { [key: string]: JSX.Element } = {
   "Kubernetes": <SiKubernetes />,
   "GCP": <SiGooglecloud />,
   "AWS": <FaAws />,
-  "Docker": <FaDocker />
+  "Docker": <FaDocker />,
+  "Figma": <SiFigma />,
+  "Framer": <SiFramer />,
+  "VS Code": <VscVscode />,
+  "GitHub": <SiGithub />,
+  "Cloudflare": <SiCloudflare />,
+  "ChatGPT": <SiOpenai />,
+  "Claude": <SiAnthropic />,
+  "Gemini": <SiGooglegemini />,
+  "Ollama": <SiOllama />,
+  "Notion": <SiNotion />,
+  "CodeRabbit": <SiCoderabbit />,
+  "Hugging Face": <SiHuggingface />,
+  "Kiro": <FaBrain />,
+  "Higgsfield": <FaVideo />,
+  "C++": <SiCplusplus />,
+  "Kotlin": <SiKotlin />,
+  "CSS": <SiCss />
 };
 
 const Skills: React.FC = () => {

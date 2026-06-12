@@ -4,26 +4,15 @@ import netflixSound from './netflix-sound.mp3';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 
-const LOADING_TEXTS = [
-  'INITIALIZING EXPERIENCE',
-  'LOADING DIGITAL ENVIRONMENT',
-  'PREPARING INTERFACE',
-  'ENTERING SUBHRANSU OS',
-];
-
 const NetflixTitle = () => {
   const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
   const sLogoRef = useRef<HTMLDivElement>(null);
   const glowRingRef = useRef<HTMLDivElement>(null);
   const wordRef = useRef<HTMLDivElement>(null);
-  const loadingBarRef = useRef<HTMLDivElement>(null);
-  const loadingFillRef = useRef<HTMLDivElement>(null);
-  const loadingTextRef = useRef<HTMLDivElement>(null);
   const scanLineRef = useRef<HTMLDivElement>(null);
   const particlesRef = useRef<HTMLDivElement>(null);
   const skipRef = useRef<HTMLButtonElement>(null);
-  const [loadingText, setLoadingText] = useState(LOADING_TEXTS[0]);
   const [isStarted, setIsStarted] = useState(false);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
   
@@ -68,7 +57,7 @@ const NetflixTitle = () => {
   }, [audio]);
 
   useEffect(() => {
-    // Bypass if already played in this session (allows refreshing to see it again, but not page clickbacks)
+    // Bypass if already played in this session
     const alreadyPlayed = sessionStorage.getItem('introPlayed');
     if (alreadyPlayed) {
       navigate('/browse');
@@ -115,22 +104,15 @@ const NetflixTitle = () => {
       }
     }
 
-    // Text cycling
-    let textIdx = 0;
-    const textInterval = setInterval(() => {
-      textIdx = (textIdx + 1) % LOADING_TEXTS.length;
-      setLoadingText(LOADING_TEXTS[textIdx]);
-    }, 800);
-
     // GSAP master timeline
     const tl = gsap.timeline();
     timelineRef.current = tl;
 
     // ─── 0.0s: Start - everything hidden
-    gsap.set([sLogoRef.current, glowRingRef.current, wordRef.current, loadingBarRef.current, loadingTextRef.current], {
+    gsap.set([sLogoRef.current, glowRingRef.current, wordRef.current], {
       opacity: 0,
     });
-    // Set scale to 0.1 for 2D safe scaling (avoiding rotateY which can bug on mobile)
+    // Set scale to 0.1 for 2D safe scaling
     gsap.set(sLogoRef.current, { scale: 0.1 });
     gsap.set(wordRef.current, { scale: 0.01, opacity: 0 });
 
@@ -202,27 +184,20 @@ const NetflixTitle = () => {
         ease: 'power2.out',
       }, '-=0.25')
 
-      // ─── 3.0s: Loading bar activates
-      .to(loadingBarRef.current, { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, '-=0.1')
-      .to(loadingTextRef.current, { opacity: 1, duration: 0.3 }, '-=0.2')
-      .to(loadingFillRef.current, { width: '100%', duration: 1.1, ease: 'power1.inOut' }, '-=0.1')
-
-      // ─── 4.2s: Full fade out → navigate
+      // ─── 3.0s: Full fade out → navigate
       .to(containerRef.current, {
         opacity: 0,
         duration: 0.5,
         ease: 'power2.inOut',
         onComplete: () => {
-          clearInterval(textInterval);
           navigate('/browse');
         },
-      }, '+=0.15');
+      }, '+=0.5'); // 0.5s pause to allow the name text glow to linger
 
     // Show skip button after 1.5s
     gsap.to(skipRef.current, { opacity: 1, duration: 0.4, delay: 1.5 });
 
     return () => {
-      clearInterval(textInterval);
       tl.kill();
       if (audioRef.current) {
         audioRef.current.pause();
@@ -341,16 +316,6 @@ const NetflixTitle = () => {
                 </textPath>
               </text>
             </svg>
-          </div>
-
-          {/* Loading bar + text */}
-          <div className="loading-section" ref={loadingBarRef} style={{ opacity: 0, transform: 'translateY(10px)' }}>
-            <div className="loading-text" ref={loadingTextRef} style={{ opacity: 0 }}>
-              {loadingText}
-            </div>
-            <div className="loading-track">
-              <div className="loading-fill" ref={loadingFillRef} />
-            </div>
           </div>
 
           {/* Skip button */}

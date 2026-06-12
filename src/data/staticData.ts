@@ -12,28 +12,28 @@ export const staticProfileBanner: Record<string, ProfileBanner> = {
     headline: "Subhransu Nayak",
     profileSummary: "11th & 12th higher secondary science student at Khallikote College, Berhampur. Actively building frontend and backend foundations, combining logical structures with clean user experiences. Seeking opportunities to collaborate and build the next generation of web applications.",
     resumeLink: { url: "/Subhransu_Nayak_Resume.docx" },
-    linkedinLink: "https://www.linkedin.com/posts/subhransu-nayak-4b33383a7_i-built-an-youtube-comment-automation-website-ugcPost-7469356091273986049-OHQF/"
+    linkedinLink: "https://www.linkedin.com/in/subhransu-nayak-4b33383a7?utm_source=share_via&utm_content=profile&utm_medium=member_android"
   },
   developer: {
     backgroundImage: { url: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGNidDl5emZpejY2eGFxa2I4NW0zZGNpbWRlbnBrZ3N2dWhhbzM1MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TFPdmm3rdzeZ0kP3zG/giphy.gif" },
     headline: "Subhransu Nayak // Dev Profile",
     profileSummary: "Began learning programming and software logic in Python in 2025. Fell in love with web layouts. Actively training on React, Node.js, Python, Java, C#, and C. Balances daytime science classes at Khallikote College with night-time coding modules.",
     resumeLink: { url: "/Subhransu_Nayak_Resume.docx" },
-    linkedinLink: "https://www.linkedin.com/posts/subhransu-nayak-4b33383a7_i-built-an-youtube-comment-automation-website-ugcPost-7469356091273986049-OHQF/"
+    linkedinLink: "https://www.linkedin.com/in/subhransu-nayak-4b33383a7?utm_source=share_via&utm_content=profile&utm_medium=member_android"
   },
   stalker: {
     backgroundImage: { url: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc28yMjMyZmJ6eWtxbmNwdDV6cXk4dWZmcjFhZms2cXBjN2h5ZDJjeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QjZXUBUr89CkiWLPjL/giphy.gif" },
     headline: "Stalking Subhransu Nayak?",
     profileSummary: "Here's what you need to know: Passionate beginner developer, quick learner, and higher secondary science student at Khallikote College who spends nights building high-performance downloaders and simulator platforms.",
     resumeLink: { url: "/Subhransu_Nayak_Resume.docx" },
-    linkedinLink: "https://www.linkedin.com/posts/subhransu-nayak-4b33383a7_i-built-an-youtube-comment-automation-website-ugcPost-7469356091273986049-OHQF/"
+    linkedinLink: "https://www.linkedin.com/in/subhransu-nayak-4b33383a7?utm_source=share_via&utm_content=profile&utm_medium=member_android"
   },
   adventure: {
     backgroundImage: { url: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmxib24ycWo2cjlmazh0NGV5NTZ2Mzd2YWY0M2tvam9oYXBwYW1ocCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ERKMnDK6tkzJe8YVa3/giphy-downsized-large.gif" },
     headline: "Subhransu Nayak's Adventures",
     profileSummary: "When not attending science lectures, I'm diving into Python scrapers, C# logic pipelines, or learning about server automation modules. Exploring the frontiers of web engineering and AI daily.",
     resumeLink: { url: "/Subhransu_Nayak_Resume.docx" },
-    linkedinLink: "https://www.linkedin.com/posts/subhransu-nayak-4b33383a7_i-built-an-youtube-comment-automation-website-ugcPost-7469356091273986049-OHQF/"
+    linkedinLink: "https://www.linkedin.com/in/subhransu-nayak-4b33383a7?utm_source=share_via&utm_content=profile&utm_medium=member_android"
   }
 };
 
@@ -136,7 +136,7 @@ export const staticContactMe: ContactMe = {
   title: "Higher Secondary Science Student & Aspiring Developer",
   summary: "11th & 12th higher secondary science student at Khallikote College, Berhampur. Started learning programming in 2025 and fell in love with web layouts. Balances school classes with night-time coding modules.",
   companyUniversity: "Khallikote College, Berhampur",
-  linkedinLink: "https://www.linkedin.com/posts/subhransu-nayak-4b33383a7_i-built-an-youtube-comment-automation-website-ugcPost-7469356091273986049-OHQF/",
+  linkedinLink: "https://www.linkedin.com/in/subhransu-nayak-4b33383a7?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   email: "subhransunayak007@gmail.com",
   phoneNumber: "+91 98765 43210"
 };

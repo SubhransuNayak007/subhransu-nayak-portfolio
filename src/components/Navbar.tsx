@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaHome, FaBriefcase, FaTools, FaProjectDiagram, FaEnvelope } from 'react-icons/fa';
+import { FiUser, FiCalendar, FiFileText, FiZap, FiLink } from 'react-icons/fi';
 import './Navbar.css';
 import blueImage from '../images/blue.png';
 
 const NAV_ITEMS = [
-  { to: '/browse',          label: 'Home',      Icon: FaHome },
-  { to: '/work-experience', label: 'Experience', Icon: FaBriefcase },
-  { to: '/skills',          label: 'Skills',     Icon: FaTools },
-  { to: '/projects',        label: 'Projects',   Icon: FaProjectDiagram },
-  { to: '/contact-me',      label: 'Hire Me',    Icon: FaEnvelope },
+  { to: '/browse',          label: 'Home',       Icon: FiUser },
+  { to: '/work-experience', label: 'Experience', Icon: FiCalendar },
+  { to: '/projects',        label: 'Projects',   Icon: FiFileText },
+  { to: '/skills',          label: 'Skills',     Icon: FiZap },
+  { to: '/contact-me',      label: 'Hire Me',    Icon: FiLink },
 ];
 
 const Navbar: React.FC = () => {

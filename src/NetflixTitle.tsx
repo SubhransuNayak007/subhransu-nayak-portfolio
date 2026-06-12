@@ -26,6 +26,13 @@ const NetflixTitle = () => {
   const [loadingText, setLoadingText] = useState(LOADING_TEXTS[0]);
   const [isStarted, setIsStarted] = useState(false);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
+  
+  // Pre-instantiate Audio for robust mobile audio initialization
+  const [audio] = useState(() => {
+    const aud = new Audio(netflixSound);
+    aud.preload = 'auto';
+    return aud;
+  });
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const goToBrowse = () => {
@@ -41,20 +48,28 @@ const NetflixTitle = () => {
     });
   };
 
-  const handleStartIntro = () => {
+  const handleStartIntro = (e?: React.SyntheticEvent) => {
     if (isStarted) return;
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setIsStarted(true);
 
-    // Play Netflix sound - triggered in user click event context (will bypass autoplay block)
-    const audio = new Audio(netflixSound);
+    // Play Netflix sound - triggered directly within user interaction context
     audio.volume = 1;
     audio.play().catch(err => console.log('Audio playback blocked: ', err));
     audioRef.current = audio;
   };
 
   useEffect(() => {
-    // Bypass if already played in this session
-    const alreadyPlayed = localStorage.getItem('introPlayed');
+    // Preload audio assets
+    audio.load();
+  }, [audio]);
+
+  useEffect(() => {
+    // Bypass if already played in this session (allows refreshing to see it again, but not page clickbacks)
+    const alreadyPlayed = sessionStorage.getItem('introPlayed');
     if (alreadyPlayed) {
       navigate('/browse');
       return;
@@ -62,7 +77,7 @@ const NetflixTitle = () => {
 
     if (!isStarted) return;
 
-    localStorage.setItem('introPlayed', 'true');
+    sessionStorage.setItem('introPlayed', 'true');
 
     // Create particle sparks
     const particlesContainer = particlesRef.current;
@@ -115,14 +130,14 @@ const NetflixTitle = () => {
     gsap.set([sLogoRef.current, glowRingRef.current, wordRef.current, loadingBarRef.current, loadingTextRef.current], {
       opacity: 0,
     });
-    gsap.set(sLogoRef.current, { scale: 0.3, rotateY: -90 });
+    // Set scale to 0.1 for 2D safe scaling (avoiding rotateY which can bug on mobile)
+    gsap.set(sLogoRef.current, { scale: 0.1 });
     gsap.set(wordRef.current, { scale: 0.01, opacity: 0 });
 
     // ─── 0.4s: Red "S" appears with glow ring
     tl.to(sLogoRef.current, {
       opacity: 1,
       scale: 1,
-      rotateY: 0,
       duration: 0.7,
       ease: 'back.out(1.4)',
       delay: 0.4,
@@ -220,7 +235,11 @@ const NetflixTitle = () => {
     <div className="cinematic-container" ref={containerRef}>
       {!isStarted ? (
         /* Tap to Start / Initialize Screen to enable audio autoplay */
-        <div className="initialize-overlay" onClick={handleStartIntro}>
+        <div 
+          className="initialize-overlay" 
+          onClick={() => handleStartIntro()} 
+          onTouchStart={() => handleStartIntro()}
+        >
           <div className="initialize-glow" />
           <div className="initialize-content">
             <div className="s-logo-static">
@@ -228,7 +247,7 @@ const NetflixTitle = () => {
                 <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fill="#E50914" className="s-letter-static">S</text>
               </svg>
             </div>
-            <p className="initialize-text">CLICK TO INITIALIZE EXPERIENCE</p>
+            <p className="initialize-text">TAP TO INITIALIZE EXPERIENCE</p>
             <span className="initialize-subtext">SUBHRANSU OS v1.0.0</span>
           </div>
         </div>

@@ -1,4 +1,10 @@
 import { ProfileBanner, WorkPermit, TimelineItem, Project, Certification, ContactMe, Skill } from '../types';
+import hotelCalifornia from '../images/Hotelcalifornia.jpg';
+import acdc from '../images/ac-dc.jpg';
+import gunsNRoses from '../images/guns-n-roses.webp';
+import alchemist from '../images/alchemist.jpg';
+import richDadPoorDad from '../images/rich_dad_poor_dad.jpg';
+import atomicHabits from '../images/atomic_habits.jpg';
 
 export const staticProfileBanner: Record<string, ProfileBanner> = {
   recruiter: {
@@ -268,15 +274,15 @@ export const staticSkills: Skill[] = [
 ];
 
 export const staticMusic = [
-  { title: "Hotel California - Eagles", imgSrc: "https://picsum.photos/seed/hotelcalifornia/250/200", link: "https://open.spotify.com/track/40riOy72G6M1jVW1ptz7uE" },
-  { title: "Highway to Hell - AC/DC", imgSrc: "https://picsum.photos/seed/highwaytohell/250/200", link: "https://open.spotify.com/track/2zYzyldAdmZGb2Uk35515x" },
-  { title: "Sweet Child O' Mine - Guns N' Roses", imgSrc: "https://picsum.photos/seed/sweetchild/250/200", link: "https://open.spotify.com/track/7o2CTHR4VTu7vUiZtdIp0F" }
+  { title: "Hotel California - Eagles", imgSrc: hotelCalifornia, link: "https://open.spotify.com/track/40riOy72G6M1jVW1ptz7uE" },
+  { title: "Highway to Hell - AC/DC", imgSrc: acdc, link: "https://open.spotify.com/track/2zYzyldAdmZGb2Uk35515x" },
+  { title: "Sweet Child O' Mine - Guns N' Roses", imgSrc: gunsNRoses, link: "https://open.spotify.com/track/7o2CTHR4VTu7vUiZtdIp0F" }
 ];
 
 export const staticReading = [
-  { title: "The Alchemist - Paulo Coelho", imgSrc: "https://picsum.photos/seed/alchemist/250/200" },
-  { title: "Rich Dad Poor Dad - Robert Kiyosaki", imgSrc: "https://picsum.photos/seed/richdad/250/200" },
-  { title: "Atomic Habits - James Clear", imgSrc: "https://picsum.photos/seed/atomichabits/250/200" }
+  { title: "The Alchemist - Paulo Coelho", imgSrc: alchemist },
+  { title: "Rich Dad Poor Dad - Robert Kiyosaki", imgSrc: richDadPoorDad },
+  { title: "Atomic Habits - James Clear", imgSrc: atomicHabits }
 ];
 
 export const staticBlogs = [

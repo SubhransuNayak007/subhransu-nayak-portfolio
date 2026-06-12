@@ -14,11 +14,12 @@
 .timeline-container {
   text-align: center;
   padding: clamp(16px, 4vw, 20px) clamp(12px, 4vw, 20px);
-  margin-top: clamp(4rem, 10vw, 5rem);
-  /* Bottom padding to clear the mobile bottom tab bar */
-  padding-bottom: 100px;
+  margin-top: clamp(5rem, 12vw, 6.5rem);
   box-sizing: border-box;
-  min-height: 100vh;
+}
+
+.vertical-timeline {
+  padding-bottom: 120px !important; /* clear floating glass bottom dock */
 }
 
 .timeline-title {
